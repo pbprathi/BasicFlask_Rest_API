@@ -7,7 +7,6 @@ from resources.employee import Employee,EmployeeList
 
 
 app=Flask(__name__)
-#app.secret_key='bhageerath'
 api=Api(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
@@ -23,7 +22,6 @@ def create_table():
 api.add_resource(UserRegister,'/register')
 api.add_resource(Employee,'/employee/<int:_id>')
 api.add_resource(EmployeeList,'/employees')
-
 
 if __name__=='__main__':
     from db import db
