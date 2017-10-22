@@ -19,6 +19,7 @@ jwt=JWT(app,authenticate,identity)
 def create_table():
     db.create_all()
 
+
 api.add_resource(UserRegister,'/register')
 api.add_resource(Employee,'/employee/<int:_id>')
 api.add_resource(EmployeeList,'/employees')
@@ -28,4 +29,3 @@ if __name__=='__main__':
     from db import db
     db.init_app(app)
     app.run(debug=True)
-    
